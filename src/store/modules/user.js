@@ -6,10 +6,12 @@ const user = {
 
   },
   actions: {
-    Login ({ commit }, userInfo) {
-        const username = userInfo.username.trim()
-        console.log(username)
-        commit()
+    Login ({
+      commit
+    }, userInfo) {
+      const username = userInfo.username.trim()
+      console.log(username)
+      commit()
     }
   }
 }

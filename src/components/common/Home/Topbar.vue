@@ -55,16 +55,16 @@
 
 <script>
 export default {
-    data () {
-        return {
-            notifyList: [
-                { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-20 13:45:48' },
-                { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-19 12:55:33' },
-                { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-18 11:15:23' },
-                { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-17 10:25:17' }
-            ]
-        }
+  data () {
+    return {
+      notifyList: [
+        { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-20 13:45:48' },
+        { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-19 12:55:33' },
+        { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-18 11:15:23' },
+        { 'title': '嘿！孙砸，我是你爷爷', 'createTime': '2019-02-17 10:25:17' }
+      ]
     }
+  }
 }
 </script>
 <style lang="scss">
