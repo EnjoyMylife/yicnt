@@ -93,11 +93,11 @@ export default {
     this.pushIndex()
   },
   methods: {
-    setTabs (route) {
+    setTabs(route) {
       // console.log(route.matched)
       const name = route.matched[1].components.default.name
       // console.log(name)
-      if (!name || name === '') return
+      if (!name || name == '') return
       this.keepAliveMap[route.path] = name
       this.restKeepAlive()
     },
@@ -138,7 +138,7 @@ export default {
     },
     removeTab (data) {
       let _this = this
-      if (data.id === homeTabData.id) return
+      if (data.id == homeTabData.id) return
       _this.$store.dispatch('DelTabData', data).then(next => {
         delete this.keepAliveMap[data.attributes.url]
         _this.restKeepAlive()
@@ -151,8 +151,8 @@ export default {
         for (var k in data) {
           let item = data[k]
           if (
-            item.attributes.url === next.attributes.url ||
-            item.attributes.url === homeTabData.attributes.url
+            item.attributes.url == next.attributes.url ||
+            item.attributes.url == homeTabData.attributes.url
           ) {
             continue
           }
