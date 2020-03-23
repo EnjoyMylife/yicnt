@@ -1,0 +1,28 @@
+@import "./reset";
+
+* {
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+a { text-decoration: none }
+.dn { display: none }
+.fl { float: left }
+.fr { float: right }
+
+.clearfix{ clear: both }
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+
+#app {
+    height: 100%;
+    width: 100%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

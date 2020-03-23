@@ -7,10 +7,7 @@
       fixed
       prop="date"
       label="日期"
-      width="250">
-      <template slot-scope="scope">
-        <v-ycopen :my-data="scope.row.date"></v-ycopen>
-      </template>
+      width="150">
     </el-table-column>
     <el-table-column
       prop="name"
@@ -50,17 +47,13 @@
 </template>
 
 <script>
-  import '@/assets/styles/reset.css' // 引入公共样式
-  import vYcopen from '@/components/common/Tables/Ycopen'
   export default {
     methods: {
       handleClick(row) {
         console.log(row)
       }
     },
-    components: {
-      vYcopen
-    },
+
     data() {
       return {
         tableData: [{
@@ -91,8 +84,7 @@
           city: '普陀区',
           address: '上海市普陀区金沙江路 1518 弄',
           zip: 200333
-        }],
-        inputVal: ''
+        }]
       }
     }
   }

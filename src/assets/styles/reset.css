@@ -1,0 +1,22 @@
+/* element ui reset
+* 统一处理element ui公用样式
+*/
+
+/* el-form */
+.el-form-item {
+  margin-bottom: 16px !important;
+}
+
+.el-form-item__label {
+  font-size: 13px !important;
+}
+
+.form-item-width {
+  width: 160px !important;
+}
+
+/* el-dialog */
+.el-dialog__body {
+  min-height: 200px;
+  padding: 15px 20px !important;
+}
