@@ -41,8 +41,10 @@
       </transition>
     </div>
     <div class="yc-tab-footer">
-      <a href="https://www.yicnt.com" target="blank">www.yicnt.com</a>
-      @宜创网络版权所有 | 苏州宜创网络科技有限公司 | 苏ICP备18070891号
+      <a href="https://www.yicnt.com" target="_blank">
+        Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 苏州宜创网络科技有限公司
+      </a> |
+      <a href="http://www.beian.miit.gov.cn/" target="_blank">苏ICP备18070891号</a>
     </div>
   </div>
 </template>

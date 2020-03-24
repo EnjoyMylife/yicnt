@@ -1,26 +1,27 @@
 <template>
-  <header class='yc-main-header'>
-    <div class='yc-header-logo'>
-      <div class='logo-img' @click='logoClick'>
-        <img src='@/assets/images/logo.svg' />
+  <header class="yc-main-header">
+    <div class="yc-header-logo">
+      <div class="logo-img" @click="logoClick">
+        <img src="@/assets/images/logo.svg" />
       </div>
-      <div class='logo-info'>宜创联合办公</div>
+      <div class="logo-info">宜创联合办公</div>
     </div>
-    <div class='yc-header-menu-left'>
-      <template v-for='item in navbarList'>
+    <div class="yc-header-menu-left">
+      <template v-for="item in navbarList">
         <div
-          class='topbar-item fl'
-          :checked='item.id == navbarActive ? true : false'
-          :key='item.id'
-          @click.stop='changeNavbar(item)'
+          class="topbar-item fl"
+          :checked="item.id == navbarActive ? true : false"
+          :key="item.id"
+          @click.stop="changeNavbar(item)"
         >
-          <span class='topbar-item-btn'
-            ><i :class='item.attributes.icon'></i> {{ item.text }}</span
-          >
+          <span class="topbar-item-btn">
+            <i :class="item.attributes.icon"></i>
+            {{ item.text }}
+          </span>
         </div>
       </template>
     </div>
-    <div class='yc-header-menu-right'>
+    <div class="yc-header-menu-right">
       <v-topbar></v-topbar>
     </div>
   </header>
@@ -32,7 +33,7 @@ import vTopbar from './Topbar.vue'
 import { homeTabData } from '@/constants/homeTabData'
 
 export default {
-  data () {
+  data() {
     return {
       navbarActive: null,
       navbarList: []
@@ -42,12 +43,12 @@ export default {
     vTopbar
   },
   computed: {},
-  mounted () {
+  mounted() {
     this.getMenuData()
   },
   methods: {
     // 获取
-    getMenuData () {
+    getMenuData() {
       const _this = this
       // narbarApi.getMenuData().then((res) => {
       // _this.navbarList = res.data
@@ -110,11 +111,11 @@ export default {
       }
       // })
     },
-    logoClick () {
+    logoClick() {
       this.$store.dispatch('AddTabData', homeTabData)
       this.$router.push('/')
     },
-    changeNavbar (item) {
+    changeNavbar(item) {
       this.navbarActive = item.id
       this.$store.dispatch('ToggleSideBarData', item.children)
     }
