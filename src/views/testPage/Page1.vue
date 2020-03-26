@@ -22,12 +22,12 @@
 <script>
 export default {
   methods: {
-    handleClick (row) {
+    handleClick(row) {
       console.log(row)
     }
   },
 
-  data () {
+  data() {
     return {
       tableData: [
         {
