@@ -2,7 +2,7 @@
   <el-table :data="tableData" border style="width: 50%">
     <el-table-column fixed prop="date" label="日期" width="150">
     </el-table-column>
-    <el-table-column prop="name" label="姓名" width="120"> </el-table-column>
+    <el-table-column prop="name" label="姓名" width="120"></el-table-column>
     <el-table-column prop="province" label="省份" width="120">
     </el-table-column>
     <el-table-column prop="city" label="市区" width="120"> </el-table-column>

@@ -2,7 +2,7 @@
   <div class='yc-open-wrap' @click='handlerEdit' ref='openBox'>
     <div v-show='!isOpen'>{{ myData }}</div>
     <div v-show='isOpen' style='height:100%'>
-      <el-input size='small' v-model='myData' class='yc-open-input'></el-input>
+      <el-input size='small' v-model='myData'></el-input>
     </div>
   </div>
 </template>
@@ -36,10 +36,4 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.yc-open-input{
-  input {
-    border: none
-  }
-}
-</style>
+<style></style>

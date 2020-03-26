@@ -1,6 +1,6 @@
 <template>
   <el-table :data="tableData" border style="width: 50%">
-    <el-table-column fixed prop="date" label="日期" width="250">
+    <el-table-column fixed prop="date" label="日期" width="250" class="goods">
       <template slot-scope="scope">
         <v-ycopen :my-data="scope.row.date"></v-ycopen>
       </template>

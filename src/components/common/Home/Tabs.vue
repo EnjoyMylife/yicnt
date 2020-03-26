@@ -42,9 +42,14 @@
     </div>
     <div class="yc-tab-footer">
       <a href="https://www.yicnt.com" target="_blank">
-        Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 苏州宜创网络科技有限公司
-      </a> |
-      <a href="http://www.beian.miit.gov.cn/" target="_blank">苏ICP备18070891号</a>
+        Copyright
+        <i class="fa fa-copyright" aria-hidden="true"></i>
+        苏州宜创网络科技有限公司
+      </a>
+      |
+      <a href="http://www.beian.miit.gov.cn/" target="_blank"
+        >苏ICP备18070891号</a
+      >
     </div>
   </div>
 </template>
@@ -52,7 +57,7 @@
 import { mapGetters } from 'vuex'
 import { homeTabData } from '@/constants/homeTabData'
 export default {
-  data () {
+  data() {
     return {
       list: [
         {
@@ -86,11 +91,11 @@ export default {
     ...mapGetters(['sidebar', 'tabs'])
   },
   watch: {
-    $route (to) {
+    $route(to) {
       this.setTabs(to)
     }
   },
-  created () {
+  created() {
     this.setTabs(this.$route)
     this.pushIndex()
   },
@@ -103,21 +108,21 @@ export default {
       this.keepAliveMap[route.path] = name
       this.restKeepAlive()
     },
-    restKeepAlive () {
+    restKeepAlive() {
       this.keepAliveList = []
       for (var k in this.keepAliveMap) {
         this.keepAliveList.push(this.keepAliveMap[k])
       }
     },
-    pushIndex () {
+    pushIndex() {
       this.$store.dispatch('AddTabData', homeTabData)
       this.activeTab(homeTabData)
     },
-    handlerEnter (item, index) {
+    handlerEnter(item, index) {
       this.currentData = item
       this.currentIndex = index
     },
-    handleClick (id) {
+    handleClick(id) {
       switch (id) {
         case 0:
           this.removeTab(this.currentData)
@@ -133,12 +138,12 @@ export default {
           break
       }
     },
-    activeTab (data) {
+    activeTab(data) {
       if (!data || data.id == null) return
       this.$store.dispatch('ToggleTabActive', data.id)
       this.$router.push(data.attributes.url)
     },
-    removeTab (data) {
+    removeTab(data) {
       let _this = this
       if (data.id == homeTabData.id) return
       _this.$store.dispatch('DelTabData', data).then(next => {
@@ -147,7 +152,7 @@ export default {
         _this.activeTab(next)
       })
     },
-    removeTabOther (data) {
+    removeTabOther(data) {
       let _this = this
       this.$store.dispatch('DelTabOther', data).then(([next, data]) => {
         for (var k in data) {
@@ -164,7 +169,7 @@ export default {
         _this.activeTab(next)
       })
     },
-    removeTabAll () {
+    removeTabAll() {
       let _this = this
       this.$store.dispatch('DelTabAll').then(() => {
         _this.keepAliveMap = {}
@@ -172,7 +177,7 @@ export default {
         _this.activeTab(homeTabData)
       })
     },
-    reloadTab (data, index) {
+    reloadTab(data, index) {
       let _this = this
       _this.activeTab(data)
       console.log(this.keepAliveMap, this.keepAliveList)
@@ -181,7 +186,7 @@ export default {
 }
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .v-contextmenu {
   font-size: 12px;
   padding: 5px;
