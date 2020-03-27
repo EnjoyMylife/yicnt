@@ -27,7 +27,7 @@ export default {
     }
   },
 
-  data () {
+  data() {
     return {
       tableData: [
         {
