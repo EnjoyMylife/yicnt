@@ -17,10 +17,8 @@ Vue.use(ElementUI)
 Vue.use(contentmenu)
 
 router.beforeEach((to, form, next) => {
-  console.log(store.getters)
   let userInfo = localStorage['userInfo']
-  let tabsList = localStorage['tabsList']
-  console.log(tabsList)
+  // let tabsList = localStorage['tabsList']
   if (userInfo || to.path === '/login') {
     next()
   } else {

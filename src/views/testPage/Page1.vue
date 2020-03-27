@@ -23,7 +23,7 @@
 export default {
   methods: {
     handleClick (row) {
-      console.log(row)
+      // console.log(row)
     }
   },
 

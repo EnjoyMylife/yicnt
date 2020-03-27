@@ -1,8 +1,8 @@
 <template>
   <div class='yc-open-wrap' @click='handlerEdit' ref='openBox'>
-    <div v-show='!isOpen'>{{ myData }}</div>
+    <div v-show='!isOpen'>{{ cellData }}</div>
     <div v-show='isOpen' style='height:100%'>
-      <el-input size='small' v-model='myData' class='yc-open-input'></el-input>
+      <el-input v-model="inputValue"></el-input>
     </div>
   </div>
 </template>
@@ -24,7 +24,7 @@ export default {
     })
   },
   props: {
-    myData: String
+    cellData: String
   },
   methods: {
     handlerEdit () {

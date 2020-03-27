@@ -1,36 +1,15 @@
 <template>
-  <el-table :data="tableData" border style="width: 50%">
-    <el-table-column fixed prop="date" label="日期" width="250" class="goods">
-      <template slot-scope="scope">
-        <v-ycopen :my-data="scope.row.date"></v-ycopen>
-      </template>
-    </el-table-column>
-    <el-table-column prop="name" label="姓名" width="120"></el-table-column>
-    <el-table-column prop="province" label="省份" width="120"></el-table-column>
-    <el-table-column prop="city" label="市区" width="120"></el-table-column>
-    <el-table-column prop="address" label="地址" width="300"></el-table-column>
-    <el-table-column prop="zip" label="邮编" width="120"></el-table-column>
-    <el-table-column fixed="right" label="操作" width="100">
-      <template slot-scope="scope">
-        <el-button @click="handleClick(scope.row)" type="text" size="small">查看</el-button>
-        <el-button type="text" size="small">编辑</el-button>
-      </template>
-    </el-table-column>
-  </el-table>
+  <div>
+    <v-table :dataSource="tableData" :colModel="colModel"></v-table>
+    <div slot="open">123</div>
+  </div>
 </template>
 
 <script>
 import '@/assets/styles/reset.css' // 引入公共样式
-import vYcopen from '@/components/common/Tables/Ycopen'
+import vTable from '@/components/common/Tables'
+
 export default {
-  methods: {
-    handleClick (row) {
-      console.log(row)
-    }
-  },
-  components: {
-    vYcopen
-  },
   data () {
     return {
       tableData: [
@@ -67,8 +46,33 @@ export default {
           zip: 200333
         }
       ],
-      inputVal: ''
+      colModel: [
+        { prop: 'date', label: '日期', width: '150', align: 'center', fixed: true, headerAlign: 'left' },
+        { prop: 'name', label: '姓名', width: '150', align: 'center', fixed: false },
+        { prop: 'province', label: '省份', align: 'center', fixed: false },
+        { prop: 'city', label: '市区', width: '150', align: 'center', fixed: false },
+        { prop: 'address', label: '地址', width: '250', align: 'center', fixed: false },
+        { prop: 'zip', label: '邮编', width: '150', align: 'center', fixed: false },
+        { prop: 'zip',
+          label: '操作',
+          width: '250px',
+          align: 'center',
+          fixed: 'right',
+          render: (h, params) => {
+            return h('v-tableCellOpen', {
+              attrs: {
+                cellData: params.row.zip
+              }
+            })
+          }
+        }
+      ]
     }
+  },
+  components: {
+    vTable
+  },
+  methods: {
   }
 }
 </script>

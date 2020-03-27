@@ -9,8 +9,8 @@ const user = {
     Login ({
       commit
     }, userInfo) {
-      const username = userInfo.username.trim()
-      console.log(username)
+      // const username = userInfo.username.trim()
+      // console.log(username)
       commit()
     }
   }
