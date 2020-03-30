@@ -1,13 +1,13 @@
 <template>
   <div class="yc-sidebar" v-loading="loading">
     <div
-      :class="'yc-sidebar-toggle ' + (sidebar.opend ? 'close' : '')"
+      :class="'yc-sidebar-toggle ' + (sidebar.opend ? '' : 'close')"
       @click.stop="toggleSideBar"
     >
       <i class="fa-fw fa fa-bars"></i>
     </div>
     <el-menu
-      :collapse="sidebar.opend"
+      :collapse="!sidebar.opend"
       :default-openeds="sidebar.openList"
       :default-active="tabs.active"
       active-text-color="#20a0ff"
@@ -57,6 +57,9 @@ export default {
   },
   computed: {
     ...mapGetters(['sidebar', 'tabs'])
+  },
+  mounted() {
+    console.log(this.sidebar.opend)
   },
   methods: {
     toggleSideBar () {

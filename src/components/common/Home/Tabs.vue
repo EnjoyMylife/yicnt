@@ -180,7 +180,6 @@ export default {
     reloadTab(data, index) {
       let _this = this
       _this.activeTab(data)
-      console.log(this.keepAliveMap, this.keepAliveList)
     }
   }
 }

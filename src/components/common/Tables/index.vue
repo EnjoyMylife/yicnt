@@ -30,6 +30,8 @@
 </template>
 
 <script>
+/* eslint-disable vue/no-unused-components */
+import vTableCellOpen from '@/components/common/Tables/tableCellOpen'
 
 var exSlot = {
   functional: true,
@@ -59,7 +61,8 @@ export default {
     }
   },
   components: {
-    exSlot
+    exSlot,
+    vTableCellOpen
   },
   props: {
     dataSource: {
